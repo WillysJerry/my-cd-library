@@ -46,17 +46,17 @@ function AddCD(artistName, albumName, coverImgUrl) {
 
 function GetAlbumHTML(artistName, albumName, coverImgUrl) {
     return `<div class="album">
-        <div class="spine">
+        <div class="spine border">
             <div class="label">
                 ` + artistName + ` - ` + albumName + `
             </div>
         </div>
-        <img src="` + coverImgUrl + `"/>
+        <img class="border" src="` + coverImgUrl + `"/>
         
         <div class="back">
         
         </div>
 
-        <div class="opposite-spine"></div>
+        <div class="opposite-spine border"></div>
     </div>`;
 }
