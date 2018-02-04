@@ -60,6 +60,8 @@ body {
     padding-top: 4px;
     height: 100%;
     background-color: rgba(20, 20, 20, 1);
+    white-space: nowrap;
+    overflow: hidden;
 
     transform: rotateY(-90deg) translate3d(0, 0, 7px);
 }
@@ -75,6 +77,27 @@ body {
 
     transform-origin: 0% 0%;
     transform: rotateZ(90deg) translate(0, -100%);
+}
+
+.album > .spine > .overlay {
+    position: absolute;
+    left: -120px;
+    top: 0;
+    width: 500px;
+    height: 100%;
+    background-image: url("overlay.png");
+    background-size: cover;
+    opacity: 0.15;
+
+    transition: left 0.5s;
+}
+
+.album:hover > .spine > .overlay {
+    left: -140px;
+}
+
+.album.active > .spine > .overlay {
+    left: -260px;
 }
 
 .album > .front {

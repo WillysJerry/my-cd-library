@@ -50,6 +50,7 @@ function GetAlbumHTML(artistName, albumName, coverImgUrl) {
             <div class="label">
                 ` + artistName + ` - ` + albumName + `
             </div>
+            <div class="overlay"></div>
         </div>
         <div class="front">
             <img class="border" src="` + coverImgUrl + `"/>
