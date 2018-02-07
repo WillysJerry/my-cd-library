@@ -1,3 +1,7 @@
+
+var albums = [];
+var albumIndex = 0;
+
 $(document).ready(function() {
     
     AddCD("Agalloch", "The Mantle", "https://www.metal-archives.com/images/3/5/2/6/3526.jpg?5400");
@@ -25,27 +29,26 @@ $(document).ready(function() {
     AddCD("The Flight Of Sleipnir", "Skadi", "https://metalitalia.com/wp-content/uploads/2017/01/The-Flight-of-Sleipnir-Skadi-2017.jpg");
     AddCD("Thyrfing", "Vansinnesvisor", "https://www.metal-archives.com/images/1/5/0/0/1500.jpg");
     AddCD("ZZ Top", "Eliminator", "http://pldzimages.s3.amazonaws.com/products/850193.png");
+
     $(".album").click(function() {
-
-        if($(this).hasClass("active")) {
-            $(this).removeClass("active");
-        } else {
-            $(".album.active").each(function() {
-                $(this).removeClass("active");
-            });
-            
-            $(this).addClass("active");
-        }
-
+        onCdClick(this);
     });
 });
 
 function AddCD(artistName, albumName, coverImgUrl) {
-    $(".scene").append(GetAlbumHTML(artistName, albumName, coverImgUrl));
+    $(".scene").append(GetAlbumHTML(artistName, albumName, coverImgUrl, albumIndex));
+    albums[albumIndex] = {
+        index: albumIndex,
+        artistName: artistName,
+        albumName: albumName,
+        coverImgUrl: coverImgUrl
+    };
+    albumIndex++;
+
 }
 
-function GetAlbumHTML(artistName, albumName, coverImgUrl) {
-    return `<div class="album">
+function GetAlbumHTML(artistName, albumName, coverImgUrl, i) {
+    return `<div class="album" id="` + i + `">
         <div class="spine border">
             <div class="label">
                 ` + artistName + ` - ` + albumName + `
@@ -62,4 +65,33 @@ function GetAlbumHTML(artistName, albumName, coverImgUrl) {
 
         <div class="opposite-spine border"></div>
     </div>`;
+}
+
+function onCdClick(cd) {
+    if($(cd).hasClass("active")) {
+        $(cd).removeClass("active");
+        setInfo(null);
+    } else {
+        $(".album.active").each(function(i, e) {
+            $(e).removeClass("active");
+        });
+        
+        $(cd).addClass("active");
+        setInfo(cd);
+    }
+}
+
+function setInfo(cd) {
+    var info = $(".info");
+
+    if(cd === null) {
+        info.addClass("hidden");
+        return;
+    } else {
+        info.removeClass("hidden");
+        var i = $(cd).attr("id");
+        info.children("#info-artist").html(albums[i].artistName);
+        info.children("#info-album").html(albums[i].albumName);
+    }
+
 }
