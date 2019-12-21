@@ -7,7 +7,7 @@ $(document).ready(function() {
     AddCD("Agalloch", "The Mantle", "https://www.metal-archives.com/images/3/5/2/6/3526.jpg?5400");
     AddCD("Bathory", "Blood Fire Death", "https://kanon666.files.wordpress.com/2009/07/bathory_blood_fire_death-f2.jpg");
     AddCD("Bolt Thrower", "...For Victory", "https://dx72k0ec4onep.cloudfront.net/product/1616/283385981478247259-640x640-887923554717.jpg");
-    AddCD("Burzum", "Filosofem", "http://www.kolonyrecords.com/store/images/detailed/0/[AllCDCovers]_burzum_filosofem_1996_retail_cd-front.jpg");
+    AddCD("Burzum", "Filosofem", "https://upload.wikimedia.org/wikipedia/commons/a/a1/Filosofem.jpg");
     AddCD("Burzum", "Hvis Lyset Tar Oss", "https://4.bp.blogspot.com/_OBR_OdKiYfI/SmdRMwX_DZI/AAAAAAAAAs8/ngTUwRKXIBE/s1600/burzum_-_hvis_lyset_tar_oss.jpg");
     AddCD("Candlemass", "Ancient Dreams", "https://www.metal-archives.com/images/1/2/5/125.jpg");
     AddCD("Candlemass", "Nightfall", "https://www.metal-archives.com/images/1/2/4/124.jpg");

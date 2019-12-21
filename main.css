@@ -19,8 +19,7 @@ body {
     height: 200px;
     overflow: visible;
     white-space: nowrap;
-
-    background-image: url("http://allroundnews.com/wp-content/uploads/2012/02/seamless-wood-texture-free-5.jpg");
+    background-image: url("wood.jpg");
     background-repeat: repeat-x;
 
     perspective: 600px;
