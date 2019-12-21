@@ -2,4 +2,4 @@
 3D CD library using CSS.
 Mostly playing around with css transforms.
 
-https://willysjerry.github.io/my-cd-library/
+https://willys0.github.io/my-cd-library/
